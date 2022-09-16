@@ -3,7 +3,6 @@
     <v-text-field
       v-model="search"
       label="Поиск..."
-      class="input"
       @input="setSearch"
     ></v-text-field>
     <div>
@@ -67,9 +66,9 @@ export default Vue.extend({
 .sidebar {
   display: flex;
   justify-content: space-between;
-}
-.input {
-  max-width: 200px;
+  .v-text-field {
+    max-width: 200px;
+  }
 }
 
 @media (max-width: 575.98px) {
@@ -78,11 +77,13 @@ export default Vue.extend({
   }
 }
 @media (max-width: 479.98px) {
-  .v-input--radio-group.v-input--radio-group--row .v-radio {
-    margin-right: 0;
-  }
-  .input {
-    width: 145px;
+  .sidebar {
+    .v-input--radio-group.v-input--radio-group--row .v-radio {
+      margin-right: 0;
+    }
+    .v-text-field {
+      width: 145px;
+    }
   }
 }
 </style>
