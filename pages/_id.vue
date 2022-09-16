@@ -27,30 +27,33 @@
   </div>
 </template>
 
-<script>
-export default {
-  validate({ params }) {
+<script lang="ts">
+import Vue from 'vue'
+import { Beer } from '~/types/Beer'
+export default Vue.extend({
+  validate({ params }): boolean {
     if (/^\d+$/.test(params.id)) {
       return true
     } else {
       return false
     }
   },
-  async asyncData({ $axios, params }) {
+  async asyncData({ $axios, params }): Promise<{ beer: Beer }> {
     const beer = await $axios.$get(
       `https://api.punkapi.com/v2/beers/${params.id}`
     )
     return { beer: beer[0] }
   },
   data: () => ({
-    beer: {},
+    beer: {} as Beer,
+    dialog: false as boolean,
   }),
   methods: {
-    back() {
+    back(): void {
       this.$router.back()
     },
   },
-}
+})
 </script>
 
 <style lang="scss">
@@ -67,6 +70,7 @@ export default {
   &__img {
     height: 500px;
     margin-left: 40px;
+    position: relative;
   }
   &__tagline {
     margin-bottom: 10px;

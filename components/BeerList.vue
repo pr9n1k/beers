@@ -1,16 +1,18 @@
 <template>
-  <div :class="beer__list">
-    <div v-for="beer of paginate" :key="beer.id" class="beer__item">
+  <div :class="beerList">
+    <div
+      v-for="beer of list"
+      :key="beer.id"
+      class="beer__item"
+      @click="openBeer(beer.id)"
+    >
       <div class="beer__item-img">
         <img :src="beer.image_url" alt="image" />
       </div>
       <div class="beer__item-info">
-        <a
-          href="#"
-          class="beer__item-title"
-          @click.prevent="openBeer(beer.id)"
-          >{{ beer.name }}</a
-        >
+        <h3 class="beer__item-title">
+          {{ beer.name }}
+        </h3>
         <p class="beer__item-description">{{ beer.description }}</p>
       </div>
     </div>
@@ -18,29 +20,32 @@
 </template>
 
 <script lang="ts">
-//   import Vue from "vue"
-// export default Vue.extend({
-//   name: 'BeerList',
-//   props: {
-//     paginate: {
-//       type: Array,
-//       default() {
-//         return []
-//       },
-//     },
-//   },
-//   data: () => ({}),
-//   computed: {
-//     beer__list({$store}): string {
-//       return 'beer__list ' + $store.getters.getView
-//     },
-//   },
-//   methods: {
-//     openBeer(id) {
-//       this.$router.push(`/${id}`)
-//     },
-//   },
-// })
+import Vue, { PropType } from 'vue'
+import { TypeView } from '~/store/action'
+import { Beer } from '~/types/Beer'
+export default Vue.extend({
+  name: 'BeerList',
+  props: {
+    view: {
+      type: String as PropType<TypeView>,
+      default: TypeView.tiled,
+    },
+    list: {
+      type: Array as PropType<Beer[]>,
+      default: null,
+    },
+  },
+  computed: {
+    beerList(): string {
+      return 'beer__list ' + this.view
+    },
+  },
+  methods: {
+    openBeer(id: number): void {
+      this.$router.push(`/${id}`)
+    },
+  },
+})
 </script>
 
 <style lang="scss">
@@ -49,7 +54,19 @@
     display: flex;
     flex: 1 1 auto;
   }
+  &__item {
+    cursor: pointer;
+    transition: 0.5s;
+    padding: 10px 10px 0;
+    border-radius: 16px;
+    &:hover {
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      transition: box-shadow 0.3s ease-in-out;
+      transition: 0.5s;
+    }
+  }
   &__item-img {
+    position: relative;
     img {
       height: 100%;
       margin: 0 auto;

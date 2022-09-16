@@ -8,12 +8,11 @@
   padding: 0;
   box-sizing: border-box;
 }
-body {
-  background: #e5e5e5;
-}
+
 main.main {
   display: flex;
   flex: 1 1 auto;
+  background: #e5e5e5;
 }
 img {
   height: 100%;
@@ -34,6 +33,20 @@ img {
 @media (min-width: 1200px) {
   .wrapper {
     max-width: 1230px;
+  }
+}
+@media (max-width: 575.98px) {
+  p {
+    font-size: 14px;
+  }
+  h1 {
+    font-size: 20px;
+  }
+  h3 {
+    font-size: 16px;
+  }
+  strong {
+    font-size: 14px;
   }
 }
 @media (min-width: 480px) {
