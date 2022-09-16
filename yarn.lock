@@ -6328,6 +6328,14 @@ num2fraction@^1.2.2:
   resolved "https://registry.yarnpkg.com/num2fraction/-/num2fraction-1.2.2.tgz#6f682b6a027a4e9ddfa4564cd2589d1d4e669ede"
   integrity sha512-Y1wZESM7VUThYY+4W+X4ySH2maqcA+p7UR+w8VWNWVAd6lwuXXWz/w/Cz43J/dI2I+PS6wD5N+bJUF+gjWvIqg==
 
+nuxt-typed-vuex@^0.3.1:
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/nuxt-typed-vuex/-/nuxt-typed-vuex-0.3.1.tgz#a26f7b92eb19257ccda2c3a1ffaab4303088c7dc"
+  integrity sha512-oMAoO7/i/aW8NHgE9QSnNcJmKiJjFfTtgU6aotr0786ApgXk1At2qhiW63qFlXsX1wei94WmqLMuNCI/nl8Z0A==
+  dependencies:
+    typed-vuex "0.3.1"
+    upath "^2.0.1"
+
 nuxt@^2.15.8:
   version "2.15.8"
   resolved "https://registry.yarnpkg.com/nuxt/-/nuxt-2.15.8.tgz#946cba46bdaaf0e3918aa27fd9ea0fed8ed303b0"
@@ -8797,6 +8805,11 @@ type-fest@^0.8.1:
   resolved "https://registry.yarnpkg.com/type-fest/-/type-fest-0.8.1.tgz#09e249ebde851d3b1e48d27c105444667f17b83d"
   integrity sha512-4dbzIzqvjtgiM5rw1k5rEHtBANKmdudhGyBEajN01fEyhaAIhsoKNy6y7+IN93IfpFtwY9iqi7kD+xwKhQsNJA==
 
+typed-vuex@0.3.1:
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/typed-vuex/-/typed-vuex-0.3.1.tgz#4ed6adfd8cbfe68e0792b5b75f425ce3f622627e"
+  integrity sha512-hYEcXxVNKxP6pQvzX007wJ9HdTsGlWPhSOOtpf32DbcyiPDduf6PAZPR8kwQ7+QPhp+dGyTn3K+5cKzARP6IZA==
+
 typedarray@^0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
@@ -9135,7 +9148,7 @@ vue-template-es2015-compiler@^1.9.0:
   resolved "https://registry.yarnpkg.com/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.9.1.tgz#1ee3bc9a16ecbf5118be334bb15f9c46f82f5825"
   integrity sha512-4gDntzrifFnCEvyoO8PqyJDmguXgVPxKiIxrBKjIowvL9l+N66196+72XVYR8BBf1Uv1Fgt3bGevJ+sEmxfZzw==
 
-vue@^2.6.12, vue@^2.6.14:
+vue@^2.6.12:
   version "2.7.10"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.7.10.tgz#ae516cc6c88e1c424754468844218fdd5e280f40"
   integrity sha512-HmFC70qarSHPXcKtW8U8fgIkF6JGvjEmDiVInTkKZP0gIlEPhlVlcJJLkdGIDiNkIeA2zJPQTWJUI4iWe+AVfg==
@@ -9158,6 +9171,11 @@ vuetify@^2.6, vuetify@^2.6.1:
   version "2.6.10"
   resolved "https://registry.yarnpkg.com/vuetify/-/vuetify-2.6.10.tgz#b86cd7a97bf8cd3828a72c349795b5b3c539ebc2"
   integrity sha512-fgUeRDDCwYkwu6WGEEKGe7IdfzOsXJCZGrqkn1pcS2ycuoDL8mR2/dejH5iFNnBY6MnsT365PAGn0J+9otjfQg==
+
+vuex-module-decorators@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/vuex-module-decorators/-/vuex-module-decorators-2.0.0.tgz#46fa63cc38496cf5655853a3193e53c1f2557ebc"
+  integrity sha512-awfjlJR9PlX2tDNzRk5fUnksO4TC5Z93Q3ZycvROCiLId7MZ1GdY4sHpEvPqm02UZ8jF+BkuyN5ezghOAk3zeQ==
 
 vuex@^3.6.2:
   version "3.6.2"
