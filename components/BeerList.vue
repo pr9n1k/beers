@@ -74,7 +74,12 @@ export default Vue.extend({
     }
   }
   &__item-title {
-    text-decoration: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1; /* number of lines to show */
+    line-clamp: 1;
+    -webkit-box-orient: vertical;
   }
   &__item-description {
     overflow: hidden;
@@ -96,16 +101,6 @@ export default Vue.extend({
   .beer__item-img {
     min-width: 120px;
     height: 100px;
-  }
-}
-@media (max-width: 991px) {
-  .beer__item-title {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 1; /* number of lines to show */
-    line-clamp: 1;
-    -webkit-box-orient: vertical;
   }
 }
 
