@@ -6,7 +6,7 @@
     <v-pagination
       v-show="searchHandler.length > 6"
       v-model="pageNumber"
-      :total-visible="totalVisible"
+      :total-visible="5"
       prev-icon="mdi-menu-left"
       next-icon="mdi-menu-right"
       dark
@@ -32,7 +32,6 @@ export default Vue.extend({
   data: () => ({
     pageNumber: 0 as number,
     dialog: false as boolean,
-    totalVisible: 23 as number,
   }),
   async fetch() {
     if (BeersStore.getBeers.length === 0) {
@@ -74,31 +73,9 @@ export default Vue.extend({
   mounted() {
     this.pageNumber = ActionStore.getPage
   },
-  created() {
-    // eslint-disable-next-line nuxt/no-globals-in-created
-    window.addEventListener('resize', this.onResize)
-  },
-  beforeDestroy() {
-    window.removeEventListener('resize', this.onResize)
-  },
   methods: {
     next(page: number): void {
       ActionStore.setPage(page)
-    },
-    onResize() {
-      if (process.browser) {
-        if (window.innerWidth > 1200) {
-          this.totalVisible = 23
-        } else if (window.innerWidth > 991) {
-          this.totalVisible = 20
-        } else if (window.innerWidth > 768) {
-          this.totalVisible = 14
-        } else if (window.innerWidth > 576) {
-          this.totalVisible = 10
-        } else {
-          this.totalVisible = 5
-        }
-      }
     },
   },
 })
@@ -114,7 +91,6 @@ export default Vue.extend({
 .pagination {
   margin: 0 auto;
   padding: 20px 0;
-  width: 80%;
 }
 .sidebar {
   display: flex;
